@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import style from "./DayName.module.scss";
 
 function DayName({caption}) {
@@ -8,5 +9,13 @@ function DayName({caption}) {
     </div>
   )
 }
+
+DayName.defaultProps = {
+  caption: "S"
+};
+
+DayName.defaultProps = {
+  caption: PropTypes.string.isRequired
+};
 
 export default DayName;

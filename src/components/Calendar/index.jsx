@@ -43,7 +43,7 @@ function Calendar() {
           week.map((day, index) => {
             return (
               <CalendarDay key={`day-${index}`}
-                           caption={day || ""}
+                           caption={`${day}` || ""}
                            isCurrentDay={day === currentDate} />
             )
           })

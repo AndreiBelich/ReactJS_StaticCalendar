@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import LeftSide from "../LeftSide";
 import CalendarBody from "../CalendarBody";
-import {startOfMonth, endOfMonth, getDay, getDate, getYear, getMonth} from "date-fns";
-import {NAME_OF_DAYS, NAME_OF_MONTHS, DAYS_PER_WEEK} from "../../common/js";
+import DayName from "../DayName";
+import { startOfMonth, endOfMonth, getDay, getDate, getYear, getMonth } from "date-fns";
+import { NAME_OF_DAYS, NAME_OF_MONTHS, DAYS_PER_WEEK } from "../../common/js";
 import style from "./Calendar.module.scss";
 
 function Calendar(props) {
@@ -68,11 +69,9 @@ function Calendar(props) {
     return calendarBody;
   }
 
-  const elements = NAME_OF_DAYS.map((day) => {
+  const dayNames = NAME_OF_DAYS.map((day) => {
     return (
-      <div className={`${style.dayStyle} ${style.calendarDay}`}>
-        {day[0].toUpperCase()}
-      </div>
+      <DayName caption={day[0].toUpperCase()} />
     )
   });
   const days = fillCalendarBody();
@@ -100,7 +99,7 @@ function Calendar(props) {
         </div>
       </div>*/}
       <CalendarBody fullDate={`${currentMonth} ${currentYear}`}
-                    nameOfDays={elements}
+                    nameOfDays={dayNames}
                     calendarBody={daysElements}/>
     </article>
   )

@@ -1,48 +1,10 @@
+@import "../../common/styles/common.scss";
+
 .calendar{
   display: flex;
   max-width: 1200px;
   border: 15px solid #019890;
   margin: 0 auto;
-  
-
-  .rightSide{
-    width: 65%;
-    background-color: #F5F5F5;
-    color: #14A099;
-    .dayStyle{
-      color: crimson;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-  }
-
-  .calendarRow{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 25px;
-    margin: 15px 0;
-  }
-
-  .calendarRow + .calendarRow{
-    margin-top: 10px;
-  }
-
-  .calendarDay{
-    color: rgb(16, 16, 109);
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 1.45;
-    color: #B8B8B8;
-  }
-
-  .currentDate{
-    border: 3px solid rgb(155, 4, 4);
-    border-radius: 50%;
-    color: rgb(155, 4, 4);
-  }
-
-  
 }
 
 

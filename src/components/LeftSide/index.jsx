@@ -20,9 +20,9 @@ LeftSide.defaultProps = {
   currentDate: "January"
 };
 
-/*LeftSide.propTypes = {
-  currentDay: PropTypes.string.isRequire,
-  currentDate: PropTypes.string.isRequire
-};*/
+LeftSide.propTypes = {
+  currentDay: PropTypes.string.isRequired,
+  currentDate: PropTypes.number.isRequired
+};
 
 export default LeftSide;

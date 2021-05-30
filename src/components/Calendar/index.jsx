@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import LeftSide from "../LeftSide";
 import CalendarBody from "../CalendarBody";
 import DayName from "../DayName";
+import CalendarDay from "../CalendarDay";
 import { startOfMonth, endOfMonth, getDay, getDate, getYear, getMonth } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS, DAYS_PER_WEEK } from "../../common/js";
 import style from "./Calendar.module.scss";
@@ -80,9 +81,13 @@ function Calendar(props) {
       <div className={style.calendarRow}>
         {
           week.map((day) => {
-            return (
+            /*return (
               <div className={`${style.calendarDay} ${day === currentDate ? style.currentDate : ""}`.trim()}>{day || ""}</div>
-            );
+            );*/
+            return (
+              <CalendarDay caption={day || ""}
+                           isCurrentDay={day === currentDate} />
+            )
           })
         }
       </div>

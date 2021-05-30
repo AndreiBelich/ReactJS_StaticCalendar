@@ -16,10 +16,14 @@
   margin-top: 10px;
 }
 
-
-
-.currentDate{
-  border: 3px solid rgb(155, 4, 4);
-  border-radius: 50%;
-  color: rgb(155, 4, 4);
+.calendarDay{
+  color: rgb(16, 16, 109);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 1.45;
+  color: #B8B8B8;
 }
+
+
+

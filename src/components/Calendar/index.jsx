@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import LeftSide from "../LeftSide";
 import {startOfMonth, endOfMonth, getDay, getDate, getYear, getMonth} from "date-fns";
 import {NAME_OF_DAYS, NAME_OF_MONTHS, DAYS_PER_WEEK} from "../../common/js";
 import style from "./Calendar.module.scss";
@@ -89,12 +90,13 @@ function Calendar(props) {
   });
   return (
     <article className={style.calendar}>
-      <div className={style.leftSide}>
+      {/*<div className={style.leftSide}>
         <h2 className={style.dayCaption}>{currentDay}</h2>
         <div className={style.wrapper}>
           <p className={style.dayNumber}>{currentDate}</p>
         </div>
-      </div>
+      </div>*/}
+      <LeftSide currentDay={currentDay} currentDate={currentDate} />
       <div className={style.rightSide}>
         <h2 className={style.dayCaption}>{currentMonth} {currentYear}</h2>
         <div className={style.calendarRow}>{elements}</div>

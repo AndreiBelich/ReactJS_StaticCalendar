@@ -1,0 +1,14 @@
+@import "../../common/styles/common.scss";
+
+.leftSide{
+  background-color: teal;
+  color: white;
+  width: 35%;
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    line-height: 2;
+  }
+}

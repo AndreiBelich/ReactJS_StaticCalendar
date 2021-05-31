@@ -85,9 +85,7 @@ const createCalendarBody = (rows, currentValue, lastDay) => {
   for(let i = 0; i < rows; i++){
     const temp = [];
     for(let j = 0; j < DAYS_PER_WEEK; j++){
-      const tempValue = getCorrectValue(currentValue, lastDay);
-      currentValue++;
-      temp.push(tempValue);
+      temp.push(++currentValue);
     }
     tempBody.push(temp);
   }
@@ -100,15 +98,10 @@ const createCalendarBody = (rows, currentValue, lastDay) => {
 const createLastRow = (currentValue, lastDay) => {
   const temp = [];
   for(let i = 0; i < DAYS_PER_WEEK; i++){
-    const tempValue = getCorrectValue(currentValue, lastDay);
-    currentValue++;
+    const tempValue = ((currentValue + 1) <= lastDay) ? ++currentValue : 0;
     temp.push(tempValue);
   }
   return temp;
-}
-
-const getCorrectValue = (currentValue, lastDay) => {
-  return ((currentValue + 1) <= lastDay) ? ++currentValue : 0;
 }
 
 const fillCalendarBody = () => {

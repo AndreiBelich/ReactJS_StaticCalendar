@@ -13,7 +13,7 @@ function Calendar() {
   const [currentDate, setCurrentDate] = useState(getDate(today));
   const [currentYear, setCurrentYear] = useState(getYear(today));
   const [currentMonth, serCurrentMonth] = useState(NAME_OF_MONTHS[getMonth(today)].toUpperCase());
-  const [calendarBody, setCalendarBody] = useState(fillCalendarBody());
+  const [calendarBody, setCalendarBody] = useState(fillCalendarBody(today));
   /*
     Тело календаря представлено в виде двумерного массива, в котором числа отличные от 0
     указывают на позицию дня в месяце, позиции отмеченные 0 не отображаются для пользователя
@@ -104,10 +104,9 @@ const createLastRow = (currentValue, lastDay) => {
   return temp;
 }
 
-const fillCalendarBody = () => {
-  const today = Date.now();
-  const firstDay = getDay(startOfMonth(today));//номер дня которому соответствует 1 число месяца
-  const lastDay = getDate(endOfMonth(today));//число соответствующее количеству дней для текущего месяца
+const fillCalendarBody = (date) => {
+  const firstDay = getDay(startOfMonth(date));//номер дня которому соответствует 1 число месяца
+  const lastDay = getDate(endOfMonth(date));//число соответствующее количеству дней для текущего месяца
   const calendarBody = [];
   let currentValue = 0;
   

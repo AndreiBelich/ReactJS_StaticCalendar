@@ -14,9 +14,7 @@ const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
     <div className={style.rightSide}>
       <SideHeading caption={`${currentMonth} ${currentYear}`}/>
       <DayNamesRow/>
-      <CalendarBody>
-        <Month calendarData={calendarData} currentDate={currentDate}/>
-      </CalendarBody>
+      <Month calendarData={calendarData} currentDate={currentDate}/>
     </div>
   )
 }

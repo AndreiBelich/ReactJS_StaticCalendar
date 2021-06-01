@@ -6,7 +6,7 @@ import CalendarHeading from "../CalendarHeading";
 import PropTypes from "prop-types";
 import {NAME_OF_MONTHS} from "../../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
-import {getYear} from "date-fns";
+import {getYear, getMonth} from "date-fns";
 import style from "./RightSide.module.scss";
 
 const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
@@ -24,7 +24,9 @@ const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
 RightSide.defaultProps = {
   currentMonth: NAME_OF_MONTHS[0],
   currentYear: getYear(Date.now()),
-  calendarData: new CalendarDataBuilder(new Date(getYear(Date.now), 0, 1)).buildData(),
+  calendarData: new CalendarDataBuilder(new Date(getYear(Date.now),
+                                                 getMonth(Date.now),
+                                                 1)).buildData(),
   currentDate: 1
 };
 

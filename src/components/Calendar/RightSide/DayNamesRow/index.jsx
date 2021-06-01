@@ -1,6 +1,6 @@
 import React from 'react'
 import DayName from "./DayName";
-import { NAME_OF_DAYS } from "../../../common/js/calendar_constants";
+import { NAME_OF_DAYS } from "../../../../common/js/calendar_constants";
 import style from "./DayNamesRow.module.scss";
 
 function DayNamesRow() {

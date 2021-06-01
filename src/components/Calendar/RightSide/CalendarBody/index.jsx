@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { NAME_OF_MONTHS } from "../../../common/js/calendar_constants";
+import { NAME_OF_MONTHS } from "../../../../common/js/calendar_constants";
 import { getYear } from "date-fns";
-import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
+import CalendarDataBuilder from "../../../../common/js/CalendarDataBuilder";
 import style from "./CalendarBody.module.scss";
 
 function CalendarBody({children}) {

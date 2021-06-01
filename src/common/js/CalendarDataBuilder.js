@@ -44,7 +44,7 @@ class CalendarDataBuilder{
     this._currentValue = 0;
 
     this._calendarBody.push(this._createFirstRow());
-    
+
     const diff = this._lastDay - this._currentValue;
     const rows = Math.floor(diff / DAYS_PER_WEEK);
     const rest = diff % DAYS_PER_WEEK;
@@ -59,3 +59,10 @@ class CalendarDataBuilder{
 }
 
 export default CalendarDataBuilder;
+
+/**
+ * Zaporozye, Ukraine
+ * The best time to visit is September or October because weather is warm.
+ * Be prepared for everything from .
+ * 
+ */

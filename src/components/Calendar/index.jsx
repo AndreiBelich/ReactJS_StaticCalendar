@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CurrentDay from "./CurrentDay";
-import RightSide from "./RightSide";
+import CalendarBody from "./CalendarBody";
 import { getDay, getDate, getYear, getMonth } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../common/js/CalendarDataBuilder";
@@ -18,7 +18,7 @@ function Calendar() {
     <article className={style.calendar}>
       <CurrentDay currentDay={currentDay} 
                 currentDate={currentDate} />
-      <RightSide currentMonth={currentMonth} 
+      <CalendarBody currentMonth={currentMonth} 
                  currentYear={currentYear} 
                  calendarData={calendarData} 
                  currentDate={currentDate}/>

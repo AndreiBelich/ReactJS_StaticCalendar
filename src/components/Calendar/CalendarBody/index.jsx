@@ -1,17 +1,16 @@
 import React from "react";
 import Month from "./Month";
-import CalendarBody from "./CalendarBody";
 import DayNamesRow from "./DayNamesRow";
 import SideHeading from "../SideHeading";
 import PropTypes from "prop-types";
 import {NAME_OF_MONTHS} from "../../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
 import {getYear, getMonth} from "date-fns";
-import style from "./RightSide.module.scss";
+import style from "./CalendarBody.module.scss";
 
-const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
+const CalendarBody = ({currentMonth, currentYear, calendarData, currentDate}) => {
   return (
-    <div className={style.rightSide}>
+    <div className={style.calendarBody}>
       <SideHeading caption={`${currentMonth} ${currentYear}`}/>
       <DayNamesRow/>
       <Month calendarData={calendarData} currentDate={currentDate}/>
@@ -19,7 +18,7 @@ const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
   )
 }
 
-RightSide.defaultProps = {
+CalendarBody.defaultProps = {
   currentMonth: NAME_OF_MONTHS[0],
   currentYear: getYear(Date.now()),
   calendarData: new CalendarDataBuilder(new Date(getYear(Date.now),
@@ -28,11 +27,11 @@ RightSide.defaultProps = {
   currentDate: 1
 };
 
-RightSide.propTypes = {
+CalendarBody.propTypes = {
   currentMonth: PropTypes.string.isRequired,
   currentYear: PropTypes.number.isRequired,
   calendarData: PropTypes.array.isRequired,
   currentDate: PropTypes.number.isRequired
 };
 
-export default RightSide;
+export default CalendarBody;

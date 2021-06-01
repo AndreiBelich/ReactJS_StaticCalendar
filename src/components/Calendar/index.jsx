@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LeftSide from "./LeftSide";
 import CalendarBody from "./CalendarBody";
 import DayNamesRow from "./DayNamesRow";
-import CalendarDay from "./CalendarDay";
+import Week from "./Week";
 import { getDay, getDate, getYear, getMonth } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../common/js/CalendarDataBuilder";
@@ -19,17 +19,7 @@ function Calendar() {
 
   const calendarData = calendarBody.map((week, index) => {
     return (
-      <div key={`week-${index}`} className={style.calendarRow}>
-        {
-          week.map((day, index) => {
-            return (
-              <CalendarDay key={`day-${index}`}
-                           caption={`${day}` === "0" ? "" : `${day}`}
-                           isCurrentDay={day === currentDate} />
-            )
-          })
-        }
-      </div>
+      <Week key={`week-${index}`} weekData={week} />
     )
   });
   return (
@@ -60,3 +50,17 @@ export default Calendar;
       [30,31,0,0,0,0,0]
     ]
    */
+
+    /*return (
+      <div key={`week-${index}`} className={style.calendarRow}>
+        {
+          week.map((day, index) => {
+            return (
+              <CalendarDay key={`day-${index}`}
+                           caption={`${day}` === "0" ? "" : `${day}`}
+                           isCurrentDay={day === currentDate} />
+            )
+          })
+        }
+      </div>
+    )*/

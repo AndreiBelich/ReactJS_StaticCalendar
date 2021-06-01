@@ -9,12 +9,12 @@ function CalendarDay({caption, isCurrentDay}) {
 }
 
 CalendarDay.defaultProps = {
-  caption: "1",
+  caption: 1,
   isCurrentDay: false
 };
 
 CalendarDay.propTypes = {
-  caption: PropTypes.string.isRequired,
+  caption: PropTypes.number.isRequired,
   isCurrentDay: PropTypes.bool.isRequired
 };
 

@@ -4,10 +4,16 @@ import { startOfMonth, endOfMonth, getDay, getDate } from "date-fns";
 class CalendarDataBuilder{
   constructor(date = Date.now()) {
     this._date = date;
-    this._firstDay = getDay(startOfMonth(date));//номер дня которому соответствует 1 число месяца
-    this._lastDay = getDate(endOfMonth(date));//число соответствующее количеству дней для текущего месяца
+    this._firstDay = getDay(startOfMonth(this._date));
+    this._lastDay = getDate(endOfMonth(this._date));
     this._calendarBody = [];
     this._currentValue = 0;
+  }
+
+  setNewDate(newDate){
+    this._date = newDate;
+    this._firstDay = getDay(startOfMonth(this._date));
+    this._lastDay = getDate(endOfMonth(this._date));
   }
 
  _createFirstRow() {

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {DAYS_PER_WEEK} from "../../../common/js/calendar_constants";
+import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../../common/js/calendar_constants";
+import { getYear } from "date-fns";
+import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
 import style from "./CalendarBody.module.scss";
 
 function CalendarBody({fullDate, nameOfDays, calendarBody}) {
@@ -16,15 +18,9 @@ function CalendarBody({fullDate, nameOfDays, calendarBody}) {
 }
 
 CalendarBody.defaultProps = {
-  fullDate: "January 2021",
-  nameOfDays: ["S", "M", "T", "W", "T", "F", "S"],
-  calendarBody: [
-    new Array(DAYS_PER_WEEK).fill(1),
-    new Array(DAYS_PER_WEEK).fill(1),
-    new Array(DAYS_PER_WEEK).fill(1),
-    new Array(DAYS_PER_WEEK).fill(1),
-    new Array(DAYS_PER_WEEK).fill(1),
-  ]
+  fullDate: `${NAME_OF_MONTHS[0]} ${getYear(Date.now())}`,
+  nameOfDays: NAME_OF_DAYS.map((day) => day[0].toUpperCase()),
+  calendarBody: new CalendarDataBuilder(new Date(getYear(Date.now()), 0, 1)).buildData()
 };
 
 CalendarBody.propTypes = {

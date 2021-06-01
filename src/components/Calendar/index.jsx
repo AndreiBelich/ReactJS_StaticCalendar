@@ -10,6 +10,7 @@ import style from "./Calendar.module.scss";
 
 function Calendar() {
   const today = Date.now();
+  //const today = new Date(2021, 0, 17);
   const [currentDay, setCurrentDay] = useState(NAME_OF_DAYS[getDay(today)].toUpperCase());
   const [currentDate, setCurrentDate] = useState(getDate(today));
   const [currentYear, setCurrentYear] = useState(getYear(today));
@@ -43,6 +44,7 @@ function Calendar() {
       <CalendarBody fullDate={`${currentMonth} ${currentYear}`}
                     nameOfDays={dayNames}
                     calendarBody={calendarData}/>
+      <CalendarBody />
     </article>
   )
 }

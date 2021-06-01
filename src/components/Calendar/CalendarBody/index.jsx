@@ -19,7 +19,7 @@ const CalendarBody = ({currentMonth, currentYear, calendarData, currentDate}) =>
 }
 
 CalendarBody.defaultProps = {
-  currentMonth: NAME_OF_MONTHS[0],
+  currentMonth: NAME_OF_MONTHS[getMonth(Date.now())],
   currentYear: getYear(Date.now()),
   calendarData: new CalendarDataBuilder(new Date(getYear(Date.now),
                                                  getMonth(Date.now),

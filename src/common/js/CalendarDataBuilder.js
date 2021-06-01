@@ -3,9 +3,6 @@ import { startOfMonth, endOfMonth, getDay, getDate } from "date-fns";
 
 class CalendarDataBuilder{
   constructor(date = Date.now()) {
-    //numberOfTheFirstDayOfTheMonth
-    //firstDay
-    //lastDay lastDayOfMonth
     this._date = date;
     this._numberOfTheFirstDayOfTheMonth = getDay(startOfMonth(this._date));
     this._lastDayOfMonth = getDate(endOfMonth(this._date));

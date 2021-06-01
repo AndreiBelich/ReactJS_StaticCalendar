@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import CalendarHeading from "../CalendarHeading";
+import SideHeading from "../SideHeading";
 import style from "./LeftSide.module.scss";
 
 const LeftSide = ({currentDay, currentDate}) => {
   return (
     <div className={style.leftSide}>
-      <CalendarHeading caption={currentDay} />
+      <SideHeading caption={currentDay} />
       <div className={style.wrapper}>
         <p>{currentDate}</p>
       </div>

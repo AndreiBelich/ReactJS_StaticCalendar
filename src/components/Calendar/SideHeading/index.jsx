@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./CalendarHeading.module.scss";
 
-const CalendarHeading = ({caption}) => {
+const SideHeading = ({caption}) => {
   return (
     <h2 className={style.dayCaption}>{caption}</h2>
   );
 }
 
-CalendarHeading.defaultProps = {
+SideHeading.defaultProps = {
   caption: "Calendar Heading"
 };
 
-CalendarHeading.propTypes = {
+SideHeading.propTypes = {
   caption: PropTypes.string.isRequired
 };
 
-export default CalendarHeading;
+export default SideHeading;

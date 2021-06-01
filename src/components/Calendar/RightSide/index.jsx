@@ -2,7 +2,7 @@ import React from "react";
 import Month from "./Month";
 import CalendarBody from "./CalendarBody";
 import DayNamesRow from "./DayNamesRow";
-import CalendarHeading from "../CalendarHeading";
+import SideHeading from "../SideHeading";
 import PropTypes from "prop-types";
 import {NAME_OF_MONTHS} from "../../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
@@ -12,7 +12,7 @@ import style from "./RightSide.module.scss";
 const RightSide = ({currentMonth, currentYear, calendarData, currentDate}) => {
   return (
     <div className={style.rightSide}>
-      <CalendarHeading caption={`${currentMonth} ${currentYear}`}/>
+      <SideHeading caption={`${currentMonth} ${currentYear}`}/>
       <DayNamesRow/>
       <CalendarBody>
         <Month calendarData={calendarData} currentDate={currentDate}/>

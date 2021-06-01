@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import SideHeading from "../SideHeading";
-import style from "./LeftSide.module.scss";
+import style from "./CurrentDay.module.scss";
 
 const LeftSide = ({currentDay, currentDate}) => {
   return (

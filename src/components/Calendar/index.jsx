@@ -16,11 +16,6 @@ function Calendar() {
   const [currentMonth, serCurrentMonth] = useState(NAME_OF_MONTHS[getMonth(today)].toUpperCase());
   const [calendarBody, setCalendarBody] = useState(new CalendarDataBuilder(today).buildData());
   
-  /*const dayNames = NAME_OF_DAYS.map((day, index) => {
-    return (
-      <DayName key={`day-${index}`} caption={day[0].toUpperCase()} />
-    )
-  });*/
 
   const calendarData = calendarBody.map((week, index) => {
     return (

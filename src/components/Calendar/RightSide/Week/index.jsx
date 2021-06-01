@@ -1,5 +1,5 @@
 import React from "react";
-import CalendarDay from "../CalendarDay";
+import CalendarDay from "../Day";
 import PropTypes from "prop-types";
 import style from "./Week.module.scss";
 

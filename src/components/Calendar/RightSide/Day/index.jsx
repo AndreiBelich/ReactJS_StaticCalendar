@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import style from "./CalendarDay.module.scss";
+import style from "./Day.module.scss";
 
-function CalendarDay({caption, isCurrentDay}) {
+function Day({caption, isCurrentDay}) {
   return (
     <div className={`${style.calendarDay} ${isCurrentDay ? style.currentDate : ""}`}>{caption}</div>
   )
 }
 
-CalendarDay.defaultProps = {
+Day.defaultProps = {
   caption: 1,
   isCurrentDay: false
 };
 
-CalendarDay.propTypes = {
+Day.propTypes = {
   caption: PropTypes.number.isRequired,
   isCurrentDay: PropTypes.bool.isRequired
 };
 
-export default CalendarDay;
+export default Day;

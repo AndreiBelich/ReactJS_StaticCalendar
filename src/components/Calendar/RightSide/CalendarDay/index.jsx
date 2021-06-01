@@ -4,7 +4,7 @@ import style from "./CalendarDay.module.scss";
 
 function CalendarDay({caption, isCurrentDay}) {
   return (
-    <div className={`${style.calendarDay} ${isCurrentDay ? style.currentDate : ""}`.trim()}>{caption}</div>
+    <div className={`${style.calendarDay} ${isCurrentDay ? style.currentDate : ""}`}>{caption}</div>
   )
 }
 

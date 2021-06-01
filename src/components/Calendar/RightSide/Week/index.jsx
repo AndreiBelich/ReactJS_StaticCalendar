@@ -1,5 +1,5 @@
 import React from "react";
-import CalendarDay from "../Day";
+import Day from "../Day";
 import PropTypes from "prop-types";
 import style from "./Week.module.scss";
 
@@ -9,7 +9,7 @@ const Week = ({weekData, currentDate}) => {
       {
         weekData.map((day, index) =>{
           return (
-            <CalendarDay key={`day-${index}`}
+            <Day key={`day-${index}`}
                          caption={`${day}` === "0" ? "" : `${day}`}
                          isCurrentDay={currentDate === day}/>
           );

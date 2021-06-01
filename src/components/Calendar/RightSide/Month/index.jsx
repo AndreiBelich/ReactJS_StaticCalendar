@@ -26,7 +26,7 @@ Month.defaultProps = {
 };
 
 Month.propTypes = {
-  calendarData: PropTypes.array. isRequired,
+  calendarData: PropTypes.array.isRequired,
   currentDate: PropTypes.number.isRequired
 };
 

@@ -14,7 +14,10 @@ Day.defaultProps = {
 };
 
 Day.propTypes = {
-  caption: PropTypes.number.isRequired,
+  caption: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]).isRequired,
   isCurrentDay: PropTypes.bool.isRequired
 };
 

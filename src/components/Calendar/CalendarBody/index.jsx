@@ -5,13 +5,10 @@ import { getYear } from "date-fns";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
 import style from "./CalendarBody.module.scss";
 
-function CalendarBody({fullDate, children}) {
+function CalendarBody({children}) {
   return (
     <>
-      <div className={style.rightSide}>
-        <h2 className={style.dayCaption}>{fullDate}</h2>
-        { children }
-      </div>
+      { children }
     </>
   )
 }

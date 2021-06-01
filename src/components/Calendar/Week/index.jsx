@@ -11,7 +11,7 @@ function Week({weekData, currentDate}){
             <CalendarDay key={`day-${index}`}
                          caption={`${day}` === "0" ? "" : `${day}`}
                          isCurrentDay={currentDate === day}/>
-          )
+          );
         })
       }
     </div>

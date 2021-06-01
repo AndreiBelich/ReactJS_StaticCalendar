@@ -42,7 +42,9 @@ class CalendarDataBuilder{
   buildData(){
     this._calendarBody = [];
     this._currentValue = 0;
+
     this._calendarBody.push(this._createFirstRow());
+    
     const diff = this._lastDay - this._currentValue;
     const rows = Math.floor(diff / DAYS_PER_WEEK);
     const rest = diff % DAYS_PER_WEEK;

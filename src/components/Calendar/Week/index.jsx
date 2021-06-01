@@ -2,7 +2,7 @@ import React from "react";
 import CalendarDay from "../CalendarDay";
 import style from "./Week.module.scss";
 
-function Week({weekData}){
+function Week({weekData, currentDate}){
   return (
     <div className={style.calendarRow}>
       {
@@ -10,7 +10,7 @@ function Week({weekData}){
           return (
             <CalendarDay key={`day-${index}`}
                          caption={`${day}` === "0" ? "" : `${day}`}
-                         isCurrentDay={false}/>
+                         isCurrentDay={currentDate === day}/>
           )
         })
       }
@@ -19,16 +19,3 @@ function Week({weekData}){
 }
 
 export default Week;
-
-/**
- * <div key={`week-${index}`} className={style.calendarRow}>
-        {
-          week.map((day, index) => {
-            return (
-              <CalendarDay key={`day-${index}`}
-                           caption={`${day}` === "0" ? "" : `${day}`}
-                           isCurrentDay={day === currentDate} />
-            )
-          })
-        }
- */

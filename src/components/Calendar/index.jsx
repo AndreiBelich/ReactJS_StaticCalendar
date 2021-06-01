@@ -3,6 +3,7 @@ import LeftSide from "./LeftSide";
 import CalendarBody from "./CalendarBody";
 import DayNamesRow from "./DayNamesRow";
 import Week from "./Week";
+import Month from "./Month";
 import { getDay, getDate, getYear, getMonth } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../common/js/CalendarDataBuilder";
@@ -17,17 +18,17 @@ function Calendar() {
   const [calendarBody, setCalendarBody] = useState(new CalendarDataBuilder(today).buildData());
   
 
-  const calendarData = calendarBody.map((week, index) => {
+  /*const calendarData = calendarBody.map((week, index) => {
     return (
       <Week key={`week-${index}`} weekData={week} />
     )
-  });
+  });*/
   return (
     <article className={style.calendar}>
       <LeftSide currentDay={currentDay} currentDate={currentDate} />
-      <CalendarBody fullDate={`${currentMonth} ${currentYear}`}
-                    calendarBody={calendarData}>
+      <CalendarBody fullDate={`${currentMonth} ${currentYear}`}>
                     <DayNamesRow/>
+                    <Month calendarData={calendarBody} currentDate={currentDate}/>
       </CalendarBody>
     </article>
   )

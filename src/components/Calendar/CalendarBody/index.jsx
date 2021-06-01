@@ -5,13 +5,12 @@ import { getYear } from "date-fns";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
 import style from "./CalendarBody.module.scss";
 
-function CalendarBody({fullDate, calendarBody, children}) {
+function CalendarBody({fullDate, children}) {
   return (
     <>
       <div className={style.rightSide}>
         <h2 className={style.dayCaption}>{fullDate}</h2>
         { children }
-        <div>{calendarBody}</div>
       </div>
     </>
   )
@@ -19,12 +18,12 @@ function CalendarBody({fullDate, calendarBody, children}) {
 
 CalendarBody.defaultProps = {
   fullDate: `${NAME_OF_MONTHS[0]} ${getYear(Date.now())}`,
-  calendarBody: new CalendarDataBuilder(new Date(getYear(Date.now()), 0, 1)).buildData()
+  //calendarBody: new CalendarDataBuilder(new Date(getYear(Date.now()), 0, 1)).buildData()
 };
 
 CalendarBody.propTypes = {
   fullDate: PropTypes.string.isRequired,
-  calendarBody: PropTypes.array.isRequired
+  //calendarBody: PropTypes.array.isRequired
 };
 
 export default CalendarBody;

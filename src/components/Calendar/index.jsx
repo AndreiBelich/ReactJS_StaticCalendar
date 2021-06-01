@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LeftSide from "./LeftSide";
 import CalendarBody from "./CalendarBody";
-import DayName from "./DayName";
+import DayNamesRow from "./DayNamesRow";
 import CalendarDay from "./CalendarDay";
 import { getDay, getDate, getYear, getMonth } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../common/js/calendar_constants";
@@ -10,18 +10,17 @@ import style from "./Calendar.module.scss";
 
 function Calendar() {
   const today = Date.now();
-  //const today = new Date(2021, 0, 17);
   const [currentDay, setCurrentDay] = useState(NAME_OF_DAYS[getDay(today)].toUpperCase());
   const [currentDate, setCurrentDate] = useState(getDate(today));
   const [currentYear, setCurrentYear] = useState(getYear(today));
   const [currentMonth, serCurrentMonth] = useState(NAME_OF_MONTHS[getMonth(today)].toUpperCase());
   const [calendarBody, setCalendarBody] = useState(new CalendarDataBuilder(today).buildData());
   
-  const dayNames = NAME_OF_DAYS.map((day, index) => {
+  /*const dayNames = NAME_OF_DAYS.map((day, index) => {
     return (
       <DayName key={`day-${index}`} caption={day[0].toUpperCase()} />
     )
-  });
+  });*/
 
   const calendarData = calendarBody.map((week, index) => {
     return (
@@ -42,9 +41,9 @@ function Calendar() {
     <article className={style.calendar}>
       <LeftSide currentDay={currentDay} currentDate={currentDate} />
       <CalendarBody fullDate={`${currentMonth} ${currentYear}`}
-                    nameOfDays={dayNames}
-                    calendarBody={calendarData}/>
-      <CalendarBody />
+                    calendarBody={calendarData}>
+                    <DayNamesRow/>
+      </CalendarBody>
     </article>
   )
 }

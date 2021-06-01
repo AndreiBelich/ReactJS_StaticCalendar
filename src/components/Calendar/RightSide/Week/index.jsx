@@ -1,8 +1,9 @@
 import React from "react";
 import CalendarDay from "../CalendarDay";
+import PropTypes from "prop-types";
 import style from "./Week.module.scss";
 
-function Week({weekData, currentDate}){
+const Week = ({weekData, currentDate}) => {
   return (
     <div className={style.calendarRow}>
       {
@@ -15,7 +16,17 @@ function Week({weekData, currentDate}){
         })
       }
     </div>
-  )
+  );
 }
+
+Week.defaultProps = {
+  weekData: [1, 2, 3, 4, 5, 6, 7],
+  currentDate: 1
+};
+
+Week.propTypes = {
+  weekData: PropTypes.array.isRequired,
+  currentDate: PropTypes.number.isRequired
+};
 
 export default Week;

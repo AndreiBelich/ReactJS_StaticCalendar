@@ -33,6 +33,6 @@ RightSide.propTypes = {
   currentYear: PropTypes.number.isRequired,
   calendarData: PropTypes.array.isRequired,
   currentDate: PropTypes.number.isRequired
-}
+};
 
 export default RightSide;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {DAYS_PER_WEEK} from "../../common/js";
+import {DAYS_PER_WEEK} from "../../../common/js/calendar_constants";
 import style from "./CalendarBody.module.scss";
 
 function CalendarBody({fullDate, nameOfDays, calendarBody}) {

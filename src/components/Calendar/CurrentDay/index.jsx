@@ -5,7 +5,7 @@ import style from "./CurrentDay.module.scss";
 
 const CurrentDay = ({currentDay, currentDate}) => {
   return (
-    <div className={style.leftSide}>
+    <div className={style.currentDay}>
       <SideHeading caption={currentDay} />
       <div className={style.wrapper}>
         <p>{currentDate}</p>

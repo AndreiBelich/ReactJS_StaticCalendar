@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SideHeading from "../SideHeading";
 import style from "./CurrentDay.module.scss";
 
-const LeftSide = ({currentDay, currentDate}) => {
+const CurrentDay = ({currentDay, currentDate}) => {
   return (
     <div className={style.leftSide}>
       <SideHeading caption={currentDay} />
@@ -14,14 +14,14 @@ const LeftSide = ({currentDay, currentDate}) => {
   )
 }
 
-LeftSide.defaultProps = {
+CurrentDay.defaultProps = {
   currentDay: 1,
   currentDate: "January"
 };
 
-LeftSide.propTypes = {
+CurrentDay.propTypes = {
   currentDay: PropTypes.string.isRequired,
   currentDate: PropTypes.number.isRequired
 };
 
-export default LeftSide;
+export default CurrentDay;

@@ -5,6 +5,7 @@ import CalendarDataBuilder from "../../../../common/js/CalendarDataBuilder";
 import Week from "../Week";
 
 const Month = ({calendarData, currentDate}) => {
+  console.log(calendarData);
   return (
     <div>
       {

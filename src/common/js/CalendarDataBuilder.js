@@ -39,7 +39,7 @@ class CalendarDataBuilder{
   _createLastRow() {
     const lastRow = [];
     for(let i = 0; i < DAYS_PER_WEEK; i++){
-      const tempValue = ((this._currentValue + 1) <= this._lastDay) ? ++this._currentValue : 0;
+      const tempValue = ((this._currentValue + 1) <= this._lastDayOfMonth) ? ++this._currentValue : 0;
       lastRow.push(tempValue);
     }
     return lastRow;

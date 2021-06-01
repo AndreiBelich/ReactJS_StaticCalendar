@@ -3,21 +3,16 @@ import PropTypes from "prop-types";
 import CalendarHeading from "../CalendarHeading";
 import style from "./LeftSide.module.scss";
 
-function LeftSide({currentDay, currentDate}) {
+const LeftSide = ({currentDay, currentDate}) => {
   return (
-    <>
-      <div className={style.leftSide}>
-        
-        <CalendarHeading caption={currentDay} />
-        <div className={style.wrapper}>
-          <p>{currentDate}</p>
-        </div>
+    <div className={style.leftSide}>
+      <CalendarHeading caption={currentDay} />
+      <div className={style.wrapper}>
+        <p>{currentDate}</p>
       </div>
-    </>
+    </div>
   )
 }
-
-//<h2 className={style.dayCaption}>{currentDay}</h2>
 
 LeftSide.defaultProps = {
   currentDay: 1,

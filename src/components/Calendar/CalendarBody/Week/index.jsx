@@ -11,7 +11,7 @@ const Week = ({weekData, currentDate}) => {
         weekData.map((day, index) =>{
           return (
             <Day key={`day-${index}`}
-                         caption={`${day}` === "0" ? "" : `${day}`}
+                         caption={day  ? day : ""}
                          isCurrentDay={currentDate === day}/>
           );
         })

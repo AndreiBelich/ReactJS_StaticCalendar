@@ -7,8 +7,8 @@ const CurrentDay = ({currentDay, currentDate}) => {
   return (
     <div className={style.currentDay}>
       <SideHeading caption={currentDay} />
-      <div className={style.wrapper}>
-        <p>{currentDate}</p>
+      <div className={style.outerWrapper}>
+        <div className={style.innerWrapper}>{currentDate}</div>
       </div>
     </div>
   )

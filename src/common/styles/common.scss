@@ -1,5 +1,4 @@
 
-
 .calendarRow{
   display: flex;
   justify-content: space-between;
@@ -13,11 +12,13 @@
 
 .calendarDay{
   color: rgb(16, 16, 109);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  line-height: 1.45;
   color: #B8B8B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

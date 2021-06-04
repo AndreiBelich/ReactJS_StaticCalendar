@@ -8,11 +8,9 @@ const Month = ({calendarData, currentDate}) => {
   return (
     <div>
       {
-        calendarData.map((week, index) => {
-          return (
-            <Week key={`week-${index}`} currentDate={currentDate} weekData={week} />
-          );
-        })
+        calendarData.map((week, index) => <Week key={`week-${index}`}
+                                                currentDate={currentDate}
+                                                weekData={week} />)
       }
     </div>
   )

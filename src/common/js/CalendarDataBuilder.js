@@ -5,7 +5,7 @@ class CalendarDataBuilder{
   constructor(date = Date.now()) {
     this.setNewDate(date);
     this._calendarData = [];
-    this._currentValue = 0;
+    this._currentDay = 0;
   }
 
   setNewDate(newDate){
@@ -17,7 +17,7 @@ class CalendarDataBuilder{
  _createFirstWeek() {
     const firstWeek = new Array(DAYS_PER_WEEK).fill(0);
     for(let i = this._numberOfTheFirstDayOfTheMonth; i < DAYS_PER_WEEK; i++){
-      firstWeek[i] = ++this._currentValue;
+      firstWeek[i] = ++this._currentDay;
     }
     return firstWeek;
   }
@@ -27,7 +27,7 @@ class CalendarDataBuilder{
     for(let i = 0; i < weeksAmount; i++){
       const temp = [];
       for(let j = 0; j < DAYS_PER_WEEK; j++){
-        temp.push(++this._currentValue);
+        temp.push(++this._currentDay);
       }
       weeks.push(temp);
     }
@@ -37,21 +37,21 @@ class CalendarDataBuilder{
   _createLastWeek() {
     const lastWeek = new Array(DAYS_PER_WEEK).fill(0);
     for(let i = 0; i < DAYS_PER_WEEK; i++){
-      if(this._currentValue + 1 > this._lastDayOfMonth){
+      if(this._currentDay + 1 > this._lastDayOfMonth){
         break;
       }
-      lastWeek[i] = ++this._currentValue;
+      lastWeek[i] = ++this._currentDay;
     }
     return lastWeek;
   }
 
   buildData(){
     this._calendarData = [];
-    this._currentValue = 0;
+    this._currentDay = 0;
 
     this._calendarData.push(this._createFirstWeek());
 
-    const diff = this._lastDayOfMonth - this._currentValue;
+    const diff = this._lastDayOfMonth - this._currentDay;
     const weeksAmount = Math.floor(diff / DAYS_PER_WEEK);
     const rest = diff % DAYS_PER_WEEK;
   

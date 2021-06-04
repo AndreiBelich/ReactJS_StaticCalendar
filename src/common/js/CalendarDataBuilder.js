@@ -35,10 +35,12 @@ class CalendarDataBuilder{
   }
 
   _createLastWeek() {
-    const lastWeek = [];
+    const lastWeek = new Array(DAYS_PER_WEEK).fill(0);
     for(let i = 0; i < DAYS_PER_WEEK; i++){
-      const tempValue = ((this._currentValue + 1) <= this._lastDayOfMonth) ? ++this._currentValue : 0;
-      lastWeek.push(tempValue);
+      if(this._currentValue + 1 > this._lastDayOfMonth){
+        break;
+      }
+      lastWeek[i] = ++this._currentValue;
     }
     return lastWeek;
   }

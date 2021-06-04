@@ -3,10 +3,8 @@ import { startOfMonth, endOfMonth, getDay, getDate } from "date-fns";
 
 class CalendarDataBuilder{
   constructor(date = Date.now()) {
-    this._date = date;
-    this._numberOfTheFirstDayOfTheMonth = getDay(startOfMonth(this._date));
-    this._lastDayOfMonth = getDate(endOfMonth(this._date));
-    this._calendarBody = [];
+    this.setNewDate(date);
+    this._calendarData = [];
     this._currentValue = 0;
   }
 
@@ -16,51 +14,51 @@ class CalendarDataBuilder{
     this._lastDayOfMonth = getDate(endOfMonth(this._date));
   }
 
- _createFirstRow() {
-    const firstRow = new Array(DAYS_PER_WEEK).fill(0);
+ _createFirstWeek() {
+    const firstWeek = new Array(DAYS_PER_WEEK).fill(0);
     for(let i = this._numberOfTheFirstDayOfTheMonth; i < DAYS_PER_WEEK; i++){
-      firstRow[i] = ++this._currentValue;
+      firstWeek[i] = ++this._currentValue;
     }
-    return firstRow;
+    return firstWeek;
   }
 
-  _createCalendarBody(rows) {
-    const body = [];
-    for(let i = 0; i < rows; i++){
+  _createWeeks(weeksAmount) {
+    const weeks = [];
+    for(let i = 0; i < weeksAmount; i++){
       const temp = [];
       for(let j = 0; j < DAYS_PER_WEEK; j++){
         temp.push(++this._currentValue);
       }
-      body.push(temp);
+      weeks.push(temp);
     }
-    return body;
+    return weeks;
   }
 
-  _createLastRow() {
-    const lastRow = [];
+  _createLastWeek() {
+    const lastWeek = [];
     for(let i = 0; i < DAYS_PER_WEEK; i++){
       const tempValue = ((this._currentValue + 1) <= this._lastDayOfMonth) ? ++this._currentValue : 0;
-      lastRow.push(tempValue);
+      lastWeek.push(tempValue);
     }
-    return lastRow;
+    return lastWeek;
   }
 
   buildData(){
-    this._calendarBody = [];
+    this._calendarData = [];
     this._currentValue = 0;
 
-    this._calendarBody.push(this._createFirstRow());
+    this._calendarData.push(this._createFirstWeek());
 
     const diff = this._lastDayOfMonth - this._currentValue;
-    const rows = Math.floor(diff / DAYS_PER_WEEK);
+    const weeksAmount = Math.floor(diff / DAYS_PER_WEEK);
     const rest = diff % DAYS_PER_WEEK;
   
-    this._calendarBody.push(...this._createCalendarBody(rows));
+    this._calendarData.push(...this._createWeeks(weeksAmount));
     
     if(rest){
-      this._calendarBody.push(this._createLastRow());
+      this._calendarData.push(this._createLastWeek());
     }
-    return this._calendarBody;
+    return this._calendarData;
   }
 }
 

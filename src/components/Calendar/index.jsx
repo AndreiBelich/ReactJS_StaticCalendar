@@ -17,11 +17,11 @@ function Calendar() {
   return (
     <article className={style.calendar}>
       <CurrentDay currentDay={currentDay} 
-                currentDate={currentDate} />
+                  currentDate={currentDate} />
       <CalendarBody currentMonth={currentMonth} 
-                 currentYear={currentYear} 
-                 calendarData={calendarData} 
-                 currentDate={currentDate}/>
+                    currentYear={currentYear} 
+                    calendarData={calendarData} 
+                    currentDate={currentDate}/>
     </article>
   )
 }

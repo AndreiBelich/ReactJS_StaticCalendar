@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from "prop-types";
 import SideHeading from "../SideHeading";
 import style from "./CurrentDay.module.scss";
+import { getDay, getDate } from "date-fns";
+import {NAME_OF_DAYS} from "../../../common/js/calendar_constants";
 
 const CurrentDay = ({currentDay, currentDate}) => {
   return (
@@ -15,8 +17,8 @@ const CurrentDay = ({currentDay, currentDate}) => {
 }
 
 CurrentDay.defaultProps = {
-  currentDay: 1,
-  currentDate: "January"
+  currentDay: NAME_OF_DAYS[getDay(new Date())].toUpperCase(),
+  currentDate: getDate(new Date())
 };
 
 CurrentDay.propTypes = {

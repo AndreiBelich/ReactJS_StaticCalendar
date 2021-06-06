@@ -9,28 +9,30 @@ import style from "./Calendar.module.scss";
 
 function Calendar() {
   const [today, setToday] = useState(new Date());
-  const [currentDay, setCurrentDay] = useState(NAME_OF_DAYS[getDay(today)].toUpperCase());//!!!!
-  const [currentDate, setCurrentDate] = useState(getDate(today));//!!!
+  const [currentDay, setCurrentDay] = useState(NAME_OF_DAYS[getDay(today)].toUpperCase());
+  const [currentDate, setCurrentDate] = useState(getDate(today));
   const [currentYear, setCurrentYear] = useState(getYear(today));
   const [currentMonth, serCurrentMonth] = useState(NAME_OF_MONTHS[getMonth(today)].toUpperCase());
-  const [calendarData, setCalendarBody] = useState(new CalendarDataBuilder(today).buildData());
+  const [dataBuilder, setDataBuilder] = useState(new CalendarDataBuilder(today));
+  const [calendarData, setCalendarBody] = useState(dataBuilder.buildData());
   const [hasCurrentDay, setHasCurrentDay] = useState(isToday(today));
 
-  const nextMonth = () => setToday((prevState) => addMonths(today, 1));
+  const nextMonth = () => setToday((prevState) => addMonths(prevState, 1));
 
   const prevMonth = () => setToday((prevState) => addMonths(prevState, -1));
 
   useEffect(()=> {
     setCurrentYear(getYear(today));
     serCurrentMonth(NAME_OF_MONTHS[getMonth(today)].toUpperCase());
-    setCalendarBody(new CalendarDataBuilder(today).buildData());
+    dataBuilder.setNewDate(today);
+    setCalendarBody(dataBuilder.buildData());
     setHasCurrentDay(isToday(today));
-  }, [today]);
+  }, [today, dataBuilder]);
   
   return (
     <article className={style.calendar}>
-      <Arrow handler={nextMonth} direction={"left"} />
-      <Arrow handler={prevMonth} direction={"right"}/>
+      <Arrow handler={prevMonth} direction={"left"}/>
+      <Arrow handler={nextMonth} direction={"right"} />
       <CurrentDay currentDay={currentDay} 
                   currentDate={currentDate} />
       <CalendarBody currentMonth={currentMonth} 

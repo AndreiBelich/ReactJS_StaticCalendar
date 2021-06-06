@@ -34,12 +34,9 @@ class CalendarDataBuilder{
     return weeks;
   }
 
-  _createLastWeek() {
+  _createLastWeek(restDays) {
     const lastWeek = new Array(DAYS_PER_WEEK).fill(0);
-    for(let i = 0; i < DAYS_PER_WEEK; i++){
-      if(this._currentDay + 1 > this._lastDayOfMonth){
-        break;
-      }
+    for(let i = 0; i < restDays; i++){
       lastWeek[i] = ++this._currentDay;
     }
     return lastWeek;
@@ -53,12 +50,12 @@ class CalendarDataBuilder{
 
     const diff = this._lastDayOfMonth - this._currentDay;
     const weeksAmount = Math.floor(diff / DAYS_PER_WEEK);
-    const rest = diff % DAYS_PER_WEEK;
+    const restDays = diff % DAYS_PER_WEEK;
   
     this._calendarData.push(...this._createWeeks(weeksAmount));
     
-    if(rest){
-      this._calendarData.push(this._createLastWeek());
+    if(restDays){
+      this._calendarData.push(this._createLastWeek(restDays));
     }
     return this._calendarData;
   }

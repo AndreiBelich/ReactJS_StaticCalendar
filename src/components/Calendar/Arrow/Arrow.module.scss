@@ -1,31 +1,27 @@
-.leftArrow{
+$borderColor: teal;
+.arrow{
   width: 150px;
   height: 150px;
-  border-left: 10px solid crimson;
-  border-bottom: 10px solid crimson;
   opacity: 0.5;
-  transform: rotate(45deg);
   position: absolute;
-  top: 33%;
-  left: -97px;
   transition: opacity 1s ease-in-out;
   &:hover{
     opacity: 1;
   }
 }
 
+.leftArrow{
+  border-left: 10px solid $borderColor;
+  border-bottom: 10px solid $borderColor;
+  transform: rotate(45deg);
+  top: 33%;
+  left: -97px;
+}
+
 .rightArrow{
-  width: 150px;
-  height: 150px;
-  border-left: 10px solid crimson;
-  border-bottom: 10px solid crimson;
-  opacity: 0.5;
+  border-left: 10px solid $borderColor;
+  border-bottom: 10px solid $borderColor;
   transform: rotate(225deg);
-  position: absolute;
   top: 33%;
   right: -97px;
-  transition: opacity 1s ease-in-out;
-  &:hover{
-    opacity: 1;
-  }
 }

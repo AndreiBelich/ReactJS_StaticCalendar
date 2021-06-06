@@ -3,7 +3,7 @@ import style from "./Arrow.module.scss";
 import PropTypes from "prop-types";
 
 const Arrow = ({handler, direction}) => {
-  return <div onClick={handler} className={direction.toLowerCase() === "left" ? style.leftArrow : style.rightArrow}></div>
+  return <div onClick={handler} className={`${style.arrow} ${direction.toLowerCase() === "left" ? style.leftArrow : style.rightArrow}`}></div>
 }
 
 Arrow.defaultProps = {

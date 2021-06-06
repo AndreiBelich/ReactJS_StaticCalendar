@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import SideHeading from "../SideHeading";
-import style from "./CurrentDay.module.scss";
+import style from "./CurrentDay.module.sass";
 import { getDay, getDate } from "date-fns";
-import {NAME_OF_DAYS} from "../../../common/js/calendar_constants";
+import { NAME_OF_DAYS } from "../../../common/js/calendar_constants";
 
 const CurrentDay = ({currentDay, currentDate}) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import style from "./Day.module.scss";
+import style from "./Day.module.sass";
 
 function Day({caption, isCurrentDay}) {
   return (

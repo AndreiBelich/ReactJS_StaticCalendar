@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import {NAME_OF_MONTHS} from "../../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../../common/js/CalendarDataBuilder";
 import {getYear, getMonth} from "date-fns";
-import style from "./CalendarBody.module.scss";
+import style from "./CalendarBody.module.sass";
 
 const CalendarBody = ({currentMonth, currentYear, calendarData, currentDate}) => {
   return (

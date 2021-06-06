@@ -5,7 +5,7 @@ import Arrow from "./Arrow";
 import { getDay, getDate, getYear, getMonth, addMonths, isToday } from "date-fns";
 import { NAME_OF_DAYS, NAME_OF_MONTHS } from "../../common/js/calendar_constants";
 import CalendarDataBuilder from "../../common/js/CalendarDataBuilder";
-import style from "./Calendar.module.scss";
+import style from "./Calendar.module.sass";
 
 function Calendar() {
   const [today, setToday] = useState(new Date());

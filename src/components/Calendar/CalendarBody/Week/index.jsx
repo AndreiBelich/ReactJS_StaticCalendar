@@ -1,8 +1,8 @@
 import React from "react";
 import Day from "../Day";
 import PropTypes from "prop-types";
-import {DAYS_PER_WEEK} from "../../../../common/js/calendar_constants";
-import style from "./Week.module.scss";
+import { DAYS_PER_WEEK } from "../../../../common/js/calendar_constants";
+import style from "./Week.module.sass";
 
 const Week = ({weekData, currentDate}) => {
   return (
@@ -22,7 +22,7 @@ const Week = ({weekData, currentDate}) => {
 
 Week.defaultProps = {
   weekData: new Array(DAYS_PER_WEEK).fill(0),
-  currentDate: 1
+  currentDate: -1
 };
 
 Week.propTypes = {

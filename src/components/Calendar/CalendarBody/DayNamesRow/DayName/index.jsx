@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import style from "./DayName.module.scss";
+import style from "./DayName.module.sass";
 
 function DayName({caption}) {
   return (
